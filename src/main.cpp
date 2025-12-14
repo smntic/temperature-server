@@ -1,6 +1,7 @@
-#include "Arduino.h"
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include "secrets.h"
+#include "website.h"
 
 const int STATUS_LED_PIN = D8;
 
@@ -34,21 +35,9 @@ void setup() {
 }
 
 String prepareHtmlPage() {
-    String htmlPage;
-    htmlPage.reserve(1024);               // prevent ram fragmentation
-    htmlPage = 
-        "HTTP/1.1 200 OK\r\n"
-        "Content-Type: text/html\r\n"
-        "Connection: close\r\n"  // the connection will be closed after completion of the response
-        "\r\n"
-        "<!DOCTYPE HTML>"
-        "<html>"
-        "<body>"
-        "<h1>ESP8266 Web Server</h1>"
-        "</body>"
-        "</html>"
-        "\r\n";
-    return htmlPage;
+    float *tempData = new float[5]{1, 2, 3, 4, 5};
+    float *humidityData = new float[5]{50, 60, 70, 80, 90};
+    return generate_website(tempData, humidityData, 5);
 }
 
 void loop(){
