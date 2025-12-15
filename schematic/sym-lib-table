@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "DHT22")(type "KiCad")(uri "/home/simon/Downloads/DHT22.kicad_sym")(options "")(descr ""))
+)

@@ -7,3 +7,7 @@ compile_commands.json.bak
 
 # secrets
 include/secrets.h
+
+# kicad
+*.kicad_prl
+~*.lck
